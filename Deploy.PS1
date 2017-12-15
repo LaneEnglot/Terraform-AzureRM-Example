@@ -14,7 +14,7 @@ $Thumbprint = $Cert.Thumbprint
 
 Write-Host "Enable HTTPS in WinRM"
 $WinRmHttps = "@{Hostname=`"$RemoteHostName`"; CertificateThumbprint=`"$Thumbprint`"}"
-winrm create winrm/config/Listener?Address=*+Transport=HTTPS $WinRmHttps
+winrm create winrm/config/Listener?Address=*+Transport=HTTPS $WinRmPort
 
 Write-Host "Set Basic Auth in WinRM"
 $WinRmBasic = "@{Basic=`"true`"}"
